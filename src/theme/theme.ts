@@ -10,6 +10,19 @@ const theme = createTheme({
             main: '#0000ff',
         },
     },
+    typography: {
+        fontFamily: 'Arial',
+    },
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    color: 'white',
+                },
+            },
+        },
+    },
+    
 });
 
 export { theme };
