@@ -6,7 +6,7 @@ import SignInForm from './Components/SignInForm';
 
 const handleGameStart = (name: string) => {
   console.log("Spiel gestartet für:", name);
-  // Logik zum Starten des Spiels hier
+  
 };
 
 function App() {

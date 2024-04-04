@@ -5,17 +5,16 @@ import { collection, addDoc } from "firebase/firestore";
 import   {db}  from '../firebase/firebaseInit'; // Importieren Sie Ihre Firestore-Instanz
 
 interface Props {
-  onGameStart: (name: string) => void; // Callback-Funktion, wenn das Spiel gestartet wird
+  onGameStart: (name: string) => void; 
 }
 
 const SignInForm: React.FC<Props> = ({ onGameStart }) => {
   const [name, setName] = useState('');
 
   const handleStartGame = async () => {
-    // Optional: Speichern des Benutzernamens in Firestore, wenn nötig
     const docRef = await addDoc(collection(db, "players"), {
       name,
-      score: 0, // Initialer Score, kann später aktualisiert werden
+      score: 0, 
     });
     
     onGameStart(name);
@@ -26,7 +25,7 @@ const SignInForm: React.FC<Props> = ({ onGameStart }) => {
   return (
     <Box
       sx={{
-        '& > :not(style)': { m: 1 }, // Abstand zwischen den Feldern
+        '& > :not(style)': { m: 1 }, 
       }}
     >
       <TextField
