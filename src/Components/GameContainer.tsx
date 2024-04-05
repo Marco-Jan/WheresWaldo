@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import BackgroundImage from './BackgroundImage';
 import SignInForm from './SignInForm';
 import { Box } from '@mui/material';
-// import ObjectArea from './ObjectArea';
+import ObjectContainer from './ObjectContainer';
 
 const GameContainer: React.FC = () => {
 
@@ -29,6 +29,7 @@ const GameContainer: React.FC = () => {
             {!gameStarted && <SignInForm onGameStart={handleGameStart} />}
             {/* {gameStarted && <ObjectArea />} */}
             <BackgroundImage show={gameStarted} />
+            <ObjectContainer />
 
         </Box>
     );
