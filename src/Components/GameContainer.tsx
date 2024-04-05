@@ -1,28 +1,37 @@
 import React, { useState } from 'react';
-import BackgroundImage from './BackgroundImage'; 
-import SignInForm from './SignInForm'; 
+import BackgroundImage from './BackgroundImage';
+import SignInForm from './SignInForm';
 import { Box } from '@mui/material';
-import ObjectArea from './ObjectArea';
+// import ObjectArea from './ObjectArea';
 
 const GameContainer: React.FC = () => {
 
-const [gameStarted, setGameStarted] = useState(false);
+    const [gameStarted, setGameStarted] = useState(false);
 
 
-const handleGameStart = (name: string) => {
-    if (name !== '') {
-        console.log('starte spiel');
-        setGameStarted(true);
-    }
+    const handleGameStart = (name: string) => {
+        if (name !== '') {
+            console.log('starte spiel');
+            setGameStarted(true);
+        }
 
-};
-return (
-    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-    {!gameStarted && <SignInForm onGameStart={handleGameStart} />}
-    <BackgroundImage show={gameStarted} />
-    {gameStarted && <ObjectArea />}
-    </Box> 
-);
+    };
+    return (
+        <Box sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '150vw',
+            height: '150vh',
+            overflow: 'auto',
+            cursor: 'crosshair',
+        }}>
+            {!gameStarted && <SignInForm onGameStart={handleGameStart} />}
+            {/* {gameStarted && <ObjectArea />} */}
+            <BackgroundImage show={gameStarted} />
+
+        </Box>
+    );
 };
 
 export default GameContainer;

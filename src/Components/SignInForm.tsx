@@ -2,8 +2,7 @@
 import { useState } from 'react';
 import { Box, TextField, Button } from '@mui/material';
 import { collection, addDoc } from "firebase/firestore";
-import { db } from '../firebase/firebaseInit'; // Importieren Sie Ihre Firestore-Instanz
-
+import { db } from '../firebase/firebaseInit';
 interface Props {
   onGameStart: (name: string) => void;
   
